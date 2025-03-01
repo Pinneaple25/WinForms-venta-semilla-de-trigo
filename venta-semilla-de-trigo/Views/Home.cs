@@ -6,5 +6,13 @@ namespace venta_semilla_de_trigo
         {
             InitializeComponent();
         }
+
+        private void BtnOpenFolder_Click(object sender, EventArgs e)
+        {
+            if (OpenFile.ShowDialog(this) != DialogResult.OK)
+                return;
+
+            BtnEstadisticas.Enabled = true;
+        }
     }
 }
