@@ -64,7 +64,10 @@
             ClientSize = new Size(282, 215);
             Controls.Add(BtnEstadisticas);
             Controls.Add(BtnOpenFolder);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Home";
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
         }
 
