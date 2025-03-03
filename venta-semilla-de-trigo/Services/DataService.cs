@@ -7,7 +7,7 @@ namespace venta_semilla_de_trigo.Services
     {
         private readonly List<Venta> ventas = [];
 
-        public void Insertar(string filePath)
+        public void Insert(string filePath)
         {
             var nuevasVentas = ExcelHandler.ParseVentas(filePath);
 
@@ -19,5 +19,11 @@ namespace venta_semilla_de_trigo.Services
             ventas.AddRange(nuevasVentas);
             MessageBox.Show($"Se han registrado {nuevasVentas.Count} nuevas ventas.");
         }
+
+        public IEnumerable<TOut> GetItems<TOut>(Func<Venta, TOut> predicate) => 
+            ventas
+            .Select(predicate)
+            .Distinct()
+            .OrderBy(x => x);
     }
 }

@@ -22,7 +22,7 @@ namespace venta_semilla_de_trigo.Views
 
             BtnEstadisticas.Enabled = true;
 
-            service.Insertar(OpenFile.FileName);
+            service.Insert(OpenFile.FileName);
         }
 
         private void BtnEstadisticas_Click(object sender, EventArgs e)

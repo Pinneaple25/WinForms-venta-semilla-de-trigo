@@ -45,6 +45,9 @@
             RbCategoria = new RadioButton();
             RbVariedad = new RadioButton();
             RbSolicitante = new RadioButton();
+            PFilter1 = new Panel();
+            PFilter2 = new Panel();
+            PFilter3 = new Panel();
             GbxFiltro.SuspendLayout();
             GbxGraficar.SuspendLayout();
             SuspendLayout();
@@ -76,6 +79,7 @@
             CbOficio.TabIndex = 9;
             CbOficio.Text = "OFICIO Reporte ";
             CbOficio.UseVisualStyleBackColor = true;
+            CbOficio.CheckedChanged += CbOficio_CheckedChanged;
             // 
             // CbFecha
             // 
@@ -96,6 +100,7 @@
             CbLote.TabIndex = 7;
             CbLote.Text = "LOTE";
             CbLote.UseVisualStyleBackColor = true;
+            CbLote.CheckedChanged += CbLote_CheckedChanged;
             // 
             // CbCiclo
             // 
@@ -106,6 +111,7 @@
             CbCiclo.TabIndex = 6;
             CbCiclo.Text = "CICLO PRODUCCIÓN";
             CbCiclo.UseVisualStyleBackColor = true;
+            CbCiclo.CheckedChanged += CbCiclo_CheckedChanged;
             // 
             // CbCosto
             // 
@@ -146,6 +152,7 @@
             CbVariedad.TabIndex = 2;
             CbVariedad.Text = "VARIEDAD";
             CbVariedad.UseVisualStyleBackColor = true;
+            CbVariedad.CheckedChanged += CbVariedad_CheckedChanged;
             // 
             // CbSolicitud
             // 
@@ -156,6 +163,7 @@
             CbSolicitud.TabIndex = 1;
             CbSolicitud.Text = "SOLICITANTE - COMPRADOR";
             CbSolicitud.UseVisualStyleBackColor = true;
+            CbSolicitud.CheckedChanged += CbSolicitud_CheckedChanged;
             // 
             // GbxGraficar
             // 
@@ -238,11 +246,35 @@
             RbSolicitante.Text = "SOLICITANTE - COMPRADOR";
             RbSolicitante.UseVisualStyleBackColor = true;
             // 
+            // PFilter1
+            // 
+            PFilter1.Location = new Point(464, 23);
+            PFilter1.Name = "PFilter1";
+            PFilter1.Size = new Size(365, 125);
+            PFilter1.TabIndex = 2;
+            // 
+            // PFilter2
+            // 
+            PFilter2.Location = new Point(464, 154);
+            PFilter2.Name = "PFilter2";
+            PFilter2.Size = new Size(365, 125);
+            PFilter2.TabIndex = 3;
+            // 
+            // PFilter3
+            // 
+            PFilter3.Location = new Point(464, 285);
+            PFilter3.Name = "PFilter3";
+            PFilter3.Size = new Size(365, 125);
+            PFilter3.TabIndex = 4;
+            // 
             // Stadistics
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(884, 404);
+            ClientSize = new Size(884, 423);
+            Controls.Add(PFilter3);
+            Controls.Add(PFilter2);
+            Controls.Add(PFilter1);
             Controls.Add(GbxGraficar);
             Controls.Add(GbxFiltro);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -276,5 +308,8 @@
         private RadioButton RbCategoria;
         private RadioButton RbVariedad;
         private RadioButton RbSolicitante;
+        private Panel PFilter1;
+        private Panel PFilter2;
+        private Panel PFilter3;
     }
 }

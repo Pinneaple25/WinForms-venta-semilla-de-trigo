@@ -25,7 +25,7 @@ namespace venta_semilla_de_trigo
 
         static IHostBuilder CreateHostBuilder() => Host.CreateDefaultBuilder()
             .ConfigureServices((context, services) => {
-                services.AddTransient<DataService>();
+                services.AddSingleton<DataService>();
                 services.AddTransient<Home>();
                 services.AddTransient<Stadistics>();
                 });
