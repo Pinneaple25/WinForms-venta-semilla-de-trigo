@@ -1,3 +1,7 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using venta_semilla_de_trigo.Services;
+
 namespace venta_semilla_de_trigo
 {
     internal static class Program
@@ -11,7 +15,17 @@ namespace venta_semilla_de_trigo
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Home());
+            
+            var host = CreateHostBuilder().Build();
+            var formService = host.Services.GetService<Home>();
+
+            Application.Run(formService!);
         }
+
+        static IHostBuilder CreateHostBuilder() => Host.CreateDefaultBuilder()
+            .ConfigureServices((context, services) => {
+                services.AddTransient<DataService>();
+                services.AddTransient<Home>();
+                });
     }
 }

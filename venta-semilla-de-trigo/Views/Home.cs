@@ -1,10 +1,15 @@
+using venta_semilla_de_trigo.Services;
+
 namespace venta_semilla_de_trigo
 {
     public partial class Home : Form
     {
-        public Home()
+        public readonly DataService service;
+
+        public Home(DataService dataService)
         {
             InitializeComponent();
+            service = dataService;
         }
 
         private void BtnOpenFolder_Click(object sender, EventArgs e)
@@ -13,6 +18,8 @@ namespace venta_semilla_de_trigo
                 return;
 
             BtnEstadisticas.Enabled = true;
+
+            service.Insertar(OpenFile.FileName);
         }
     }
 }
