@@ -1,4 +1,4 @@
-﻿namespace venta_semilla_de_trigo
+﻿namespace venta_semilla_de_trigo.Views
 {
     partial class Home
     {
@@ -52,6 +52,7 @@
             BtnEstadisticas.TabIndex = 1;
             BtnEstadisticas.Text = "Estadísticas";
             BtnEstadisticas.UseVisualStyleBackColor = true;
+            BtnEstadisticas.Click += BtnEstadisticas_Click;
             // 
             // OpenFile
             // 

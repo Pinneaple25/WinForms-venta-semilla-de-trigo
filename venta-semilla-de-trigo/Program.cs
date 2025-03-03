@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using venta_semilla_de_trigo.Services;
+using venta_semilla_de_trigo.Views;
 
 namespace venta_semilla_de_trigo
 {
@@ -26,6 +27,7 @@ namespace venta_semilla_de_trigo
             .ConfigureServices((context, services) => {
                 services.AddTransient<DataService>();
                 services.AddTransient<Home>();
+                services.AddTransient<Stadistics>();
                 });
     }
 }
