@@ -122,6 +122,7 @@
             CbCosto.TabIndex = 5;
             CbCosto.Text = "COSTO";
             CbCosto.UseVisualStyleBackColor = true;
+            CbCosto.CheckedChanged += CbCosto_CheckedChanged;
             // 
             // CbKgSalida
             // 
@@ -132,6 +133,7 @@
             CbKgSalida.TabIndex = 4;
             CbKgSalida.Text = "KG. Salida";
             CbKgSalida.UseVisualStyleBackColor = true;
+            CbKgSalida.CheckedChanged += CbKgSalida_CheckedChanged;
             // 
             // CbCategoria
             // 
@@ -251,21 +253,21 @@
             // 
             PFilter1.Location = new Point(464, 23);
             PFilter1.Name = "PFilter1";
-            PFilter1.Size = new Size(365, 125);
+            PFilter1.Size = new Size(396, 125);
             PFilter1.TabIndex = 2;
             // 
             // PFilter2
             // 
             PFilter2.Location = new Point(464, 154);
             PFilter2.Name = "PFilter2";
-            PFilter2.Size = new Size(365, 125);
+            PFilter2.Size = new Size(396, 125);
             PFilter2.TabIndex = 3;
             // 
             // PFilter3
             // 
             PFilter3.Location = new Point(464, 285);
             PFilter3.Name = "PFilter3";
-            PFilter3.Size = new Size(365, 125);
+            PFilter3.Size = new Size(396, 125);
             PFilter3.TabIndex = 4;
             // 
             // Stadistics
