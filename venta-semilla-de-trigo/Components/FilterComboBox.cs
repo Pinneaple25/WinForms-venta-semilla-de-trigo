@@ -7,7 +7,7 @@
         public FilterComboBox(IEnumerable<string> items)
         {
             InitializeComponent();
-            items = items.Select(x => string.IsNullOrWhiteSpace(x) ? "SIN REGISTRAR" : x);
+            items = items.Select(x => string.IsNullOrWhiteSpace(x) ? "_SIN REGISTRAR_" : x);
             CbxItems.Items.AddRange(items.ToArray());
         }
     }

@@ -142,6 +142,7 @@
             CbCategoria.TabIndex = 3;
             CbCategoria.Text = "CATEGORIA";
             CbCategoria.UseVisualStyleBackColor = true;
+            CbCategoria.CheckedChanged += CbCategoria_CheckedChanged;
             // 
             // CbVariedad
             // 

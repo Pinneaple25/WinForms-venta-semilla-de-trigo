@@ -37,9 +37,8 @@
             LbItems.AutoSize = true;
             LbItems.Location = new Point(22, 13);
             LbItems.Name = "LbItems";
-            LbItems.Size = new Size(46, 20);
+            LbItems.Size = new Size(0, 20);
             LbItems.TabIndex = 0;
-            LbItems.Text = "{Text}";
             // 
             // CbxItems
             // 
@@ -47,6 +46,7 @@
             CbxItems.Location = new Point(22, 43);
             CbxItems.Name = "CbxItems";
             CbxItems.Size = new Size(296, 28);
+            CbxItems.Sorted = true;
             CbxItems.TabIndex = 1;
             // 
             // FilterComboBox
