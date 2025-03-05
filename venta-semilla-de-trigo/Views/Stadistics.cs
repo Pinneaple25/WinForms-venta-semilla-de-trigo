@@ -94,6 +94,12 @@ namespace venta_semilla_de_trigo.Views
             AddFilter((CheckBox)sender, component);
         }
 
+        private void CbFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            var component = new FilterDate();
+            AddFilter((CheckBox)sender, component);
+        }
+
         private void CbOficio_CheckedChanged(object sender, EventArgs e)
         {
             var items = service.GetItems(v => v.Oficio);

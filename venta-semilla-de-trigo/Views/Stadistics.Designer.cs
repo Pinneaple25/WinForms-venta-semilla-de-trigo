@@ -90,6 +90,7 @@
             CbFecha.TabIndex = 8;
             CbFecha.Text = "FECHA";
             CbFecha.UseVisualStyleBackColor = true;
+            CbFecha.CheckedChanged += CbFecha_CheckedChanged;
             // 
             // CbLote
             // 
