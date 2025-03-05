@@ -57,6 +57,13 @@ namespace venta_semilla_de_trigo.Views
             }
         }
 
+        private void BtnGraficar_Click(object sender, EventArgs e)
+        {
+            var keys = service.GetCountGroup(v => v.Solicitante);
+            var view = new PayGraphic(keys);
+            view.Show(this);
+        }
+
         private void CheckMaxFiltersChecked(object sender, EventArgs e)
         {
             var maxReached = _filterCheckBoxes.Count(cb => cb.Checked) >= 3;

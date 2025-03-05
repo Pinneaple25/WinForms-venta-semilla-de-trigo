@@ -48,6 +48,7 @@
             PFilter1 = new Panel();
             PFilter2 = new Panel();
             PFilter3 = new Panel();
+            BtnGraficar = new Button();
             GbxFiltro.SuspendLayout();
             GbxGraficar.SuspendLayout();
             SuspendLayout();
@@ -182,7 +183,6 @@
             RbFecha.Name = "RbFecha";
             RbFecha.Size = new Size(133, 24);
             RbFecha.TabIndex = 5;
-            RbFecha.TabStop = true;
             RbFecha.Text = "OFICIO Reporte";
             RbFecha.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,6 @@
             RbLote.Name = "RbLote";
             RbLote.Size = new Size(62, 24);
             RbLote.TabIndex = 4;
-            RbLote.TabStop = true;
             RbLote.Text = "LOTE";
             RbLote.UseVisualStyleBackColor = true;
             // 
@@ -204,7 +203,6 @@
             RbCiclo.Name = "RbCiclo";
             RbCiclo.Size = new Size(166, 24);
             RbCiclo.TabIndex = 3;
-            RbCiclo.TabStop = true;
             RbCiclo.Text = "CICLO PRODUCCIÓN";
             RbCiclo.UseVisualStyleBackColor = true;
             // 
@@ -215,7 +213,6 @@
             RbCategoria.Name = "RbCategoria";
             RbCategoria.Size = new Size(108, 24);
             RbCategoria.TabIndex = 2;
-            RbCategoria.TabStop = true;
             RbCategoria.Text = "CATEGORIA";
             RbCategoria.UseVisualStyleBackColor = true;
             // 
@@ -226,13 +223,13 @@
             RbVariedad.Name = "RbVariedad";
             RbVariedad.Size = new Size(101, 24);
             RbVariedad.TabIndex = 1;
-            RbVariedad.TabStop = true;
             RbVariedad.Text = "VARIEDAD";
             RbVariedad.UseVisualStyleBackColor = true;
             // 
             // RbSolicitante
             // 
             RbSolicitante.AutoSize = true;
+            RbSolicitante.Checked = true;
             RbSolicitante.Location = new Point(12, 26);
             RbSolicitante.Name = "RbSolicitante";
             RbSolicitante.Size = new Size(222, 24);
@@ -262,11 +259,22 @@
             PFilter3.Size = new Size(396, 125);
             PFilter3.TabIndex = 4;
             // 
+            // BtnGraficar
+            // 
+            BtnGraficar.Location = new Point(48, 381);
+            BtnGraficar.Name = "BtnGraficar";
+            BtnGraficar.Size = new Size(94, 29);
+            BtnGraficar.TabIndex = 5;
+            BtnGraficar.Text = "Aceptar";
+            BtnGraficar.UseVisualStyleBackColor = true;
+            BtnGraficar.Click += BtnGraficar_Click;
+            // 
             // Stadistics
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 423);
+            Controls.Add(BtnGraficar);
             Controls.Add(PFilter3);
             Controls.Add(PFilter2);
             Controls.Add(PFilter1);
@@ -306,5 +314,6 @@
         private Panel PFilter1;
         private Panel PFilter2;
         private Panel PFilter3;
+        private Button BtnGraficar;
     }
 }

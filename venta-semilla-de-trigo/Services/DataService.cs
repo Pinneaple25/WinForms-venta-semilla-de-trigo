@@ -25,5 +25,10 @@ namespace venta_semilla_de_trigo.Services
             .Select(predicate)
             .Distinct()
             .OrderBy(x => x);
+
+        public Dictionary<string, int> GetCountGroup(Func<Venta, string> keySelector) => 
+            ventas
+            .GroupBy(keySelector)
+            .ToDictionary(g => g.Key, g => g.Count());
     }
 }
