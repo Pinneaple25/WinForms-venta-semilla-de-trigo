@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LbItems = new Label();
+            LbTitle = new Label();
             RbBasica = new RadioButton();
             RbRegistrada = new RadioButton();
             RbTodos = new RadioButton();
@@ -36,11 +36,11 @@
             // 
             // LbItems
             // 
-            LbItems.AutoSize = true;
-            LbItems.Location = new Point(22, 13);
-            LbItems.Name = "LbItems";
-            LbItems.Size = new Size(0, 20);
-            LbItems.TabIndex = 1;
+            LbTitle.AutoSize = true;
+            LbTitle.Location = new Point(22, 13);
+            LbTitle.Name = "LbItems";
+            LbTitle.Size = new Size(0, 20);
+            LbTitle.TabIndex = 1;
             // 
             // RbBasica
             // 
@@ -81,7 +81,7 @@
             Controls.Add(RbTodos);
             Controls.Add(RbRegistrada);
             Controls.Add(RbBasica);
-            Controls.Add(LbItems);
+            Controls.Add(LbTitle);
             Name = "FilterCategoria";
             Size = new Size(394, 94);
             ResumeLayout(false);
@@ -90,7 +90,7 @@
 
         #endregion
 
-        private Label LbItems;
+        private Label LbTitle;
         private RadioButton RbBasica;
         private RadioButton RbRegistrada;
         private RadioButton RbTodos;

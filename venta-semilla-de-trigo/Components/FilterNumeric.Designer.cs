@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LbItems = new Label();
+            LbTitle = new Label();
             NudMin = new NumericUpDown();
             NudMax = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)NudMin).BeginInit();
@@ -37,11 +37,11 @@
             // 
             // LbItems
             // 
-            LbItems.AutoSize = true;
-            LbItems.Location = new Point(22, 13);
-            LbItems.Name = "LbItems";
-            LbItems.Size = new Size(0, 20);
-            LbItems.TabIndex = 2;
+            LbTitle.AutoSize = true;
+            LbTitle.Location = new Point(22, 13);
+            LbTitle.Name = "LbItems";
+            LbTitle.Size = new Size(0, 20);
+            LbTitle.TabIndex = 2;
             // 
             // NudMin
             // 
@@ -67,7 +67,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(NudMax);
             Controls.Add(NudMin);
-            Controls.Add(LbItems);
+            Controls.Add(LbTitle);
             Name = "FilterNumeric";
             Size = new Size(409, 92);
             ((System.ComponentModel.ISupportInitialize)NudMin).EndInit();
@@ -78,7 +78,7 @@
 
         #endregion
 
-        private Label LbItems;
+        private Label LbTitle;
         private NumericUpDown NudMin;
         private NumericUpDown NudMax;
     }

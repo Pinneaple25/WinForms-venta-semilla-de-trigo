@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LbItems = new Label();
+            LbTitle = new Label();
             CbxItems = new ComboBox();
             SuspendLayout();
             // 
             // LbItems
             // 
-            LbItems.AutoSize = true;
-            LbItems.Location = new Point(22, 13);
-            LbItems.Name = "LbItems";
-            LbItems.Size = new Size(0, 20);
-            LbItems.TabIndex = 0;
+            LbTitle.AutoSize = true;
+            LbTitle.Location = new Point(22, 13);
+            LbTitle.Name = "LbItems";
+            LbTitle.Size = new Size(0, 20);
+            LbTitle.TabIndex = 0;
             // 
             // CbxItems
             // 
@@ -54,7 +54,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(CbxItems);
-            Controls.Add(LbItems);
+            Controls.Add(LbTitle);
             Name = "FilterComboBox";
             Size = new Size(345, 88);
             ResumeLayout(false);
@@ -63,7 +63,7 @@
 
         #endregion
 
-        private Label LbItems;
+        private Label LbTitle;
         private ComboBox CbxItems;
     }
 }

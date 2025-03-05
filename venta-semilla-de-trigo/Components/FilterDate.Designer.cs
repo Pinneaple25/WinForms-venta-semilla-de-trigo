@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LbItems = new Label();
+            LbTitle = new Label();
             CbxMinMonth = new ComboBox();
             label1 = new Label();
             NudMinYear = new NumericUpDown();
@@ -40,12 +40,12 @@
             // 
             // LbItems
             // 
-            LbItems.AutoSize = true;
-            LbItems.Location = new Point(22, 13);
-            LbItems.Name = "LbItems";
-            LbItems.Size = new Size(47, 20);
-            LbItems.TabIndex = 3;
-            LbItems.Text = "Fecha";
+            LbTitle.AutoSize = true;
+            LbTitle.Location = new Point(22, 13);
+            LbTitle.Name = "LbItems";
+            LbTitle.Size = new Size(47, 20);
+            LbTitle.TabIndex = 3;
+            LbTitle.Text = "Fecha";
             // 
             // CbxMinMonth
             // 
@@ -103,7 +103,7 @@
             Controls.Add(NudMinYear);
             Controls.Add(label1);
             Controls.Add(CbxMinMonth);
-            Controls.Add(LbItems);
+            Controls.Add(LbTitle);
             Name = "FilterDate";
             Size = new Size(388, 150);
             ((System.ComponentModel.ISupportInitialize)NudMinYear).EndInit();
@@ -114,7 +114,7 @@
 
         #endregion
 
-        private Label LbItems;
+        private Label LbTitle;
         private ComboBox CbxMinMonth;
         private Label label1;
         private NumericUpDown NudMinYear;

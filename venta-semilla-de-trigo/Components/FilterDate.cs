@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace venta_semilla_de_trigo.Components
+﻿namespace venta_semilla_de_trigo.Components
 {
     public partial class FilterDate : UserControl
     {
+        public override string Text
+        {
+            get => LbTitle.Text;
+            set => LbTitle.Text = value;
+        }
+
         public FilterDate()
         {
             InitializeComponent();

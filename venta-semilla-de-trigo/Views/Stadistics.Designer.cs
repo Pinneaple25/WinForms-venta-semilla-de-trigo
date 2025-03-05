@@ -79,7 +79,6 @@
             CbOficio.TabIndex = 9;
             CbOficio.Text = "OFICIO Reporte ";
             CbOficio.UseVisualStyleBackColor = true;
-            CbOficio.CheckedChanged += CbOficio_CheckedChanged;
             // 
             // CbFecha
             // 
@@ -90,7 +89,6 @@
             CbFecha.TabIndex = 8;
             CbFecha.Text = "FECHA";
             CbFecha.UseVisualStyleBackColor = true;
-            CbFecha.CheckedChanged += CbFecha_CheckedChanged;
             // 
             // CbLote
             // 
@@ -101,7 +99,6 @@
             CbLote.TabIndex = 7;
             CbLote.Text = "LOTE";
             CbLote.UseVisualStyleBackColor = true;
-            CbLote.CheckedChanged += CbLote_CheckedChanged;
             // 
             // CbCiclo
             // 
@@ -112,7 +109,6 @@
             CbCiclo.TabIndex = 6;
             CbCiclo.Text = "CICLO PRODUCCIÓN";
             CbCiclo.UseVisualStyleBackColor = true;
-            CbCiclo.CheckedChanged += CbCiclo_CheckedChanged;
             // 
             // CbCosto
             // 
@@ -123,7 +119,6 @@
             CbCosto.TabIndex = 5;
             CbCosto.Text = "COSTO";
             CbCosto.UseVisualStyleBackColor = true;
-            CbCosto.CheckedChanged += CbCosto_CheckedChanged;
             // 
             // CbKgSalida
             // 
@@ -134,7 +129,6 @@
             CbKgSalida.TabIndex = 4;
             CbKgSalida.Text = "KG. Salida";
             CbKgSalida.UseVisualStyleBackColor = true;
-            CbKgSalida.CheckedChanged += CbKgSalida_CheckedChanged;
             // 
             // CbCategoria
             // 
@@ -145,7 +139,6 @@
             CbCategoria.TabIndex = 3;
             CbCategoria.Text = "CATEGORIA";
             CbCategoria.UseVisualStyleBackColor = true;
-            CbCategoria.CheckedChanged += CbCategoria_CheckedChanged;
             // 
             // CbVariedad
             // 
@@ -156,7 +149,6 @@
             CbVariedad.TabIndex = 2;
             CbVariedad.Text = "VARIEDAD";
             CbVariedad.UseVisualStyleBackColor = true;
-            CbVariedad.CheckedChanged += CbVariedad_CheckedChanged;
             // 
             // CbSolicitud
             // 
@@ -167,7 +159,6 @@
             CbSolicitud.TabIndex = 1;
             CbSolicitud.Text = "SOLICITANTE - COMPRADOR";
             CbSolicitud.UseVisualStyleBackColor = true;
-            CbSolicitud.CheckedChanged += CbSolicitud_CheckedChanged;
             // 
             // GbxGraficar
             // 

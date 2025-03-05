@@ -2,7 +2,11 @@
 {
     public partial class FilterComboBox : UserControl
     {
-        public override string? Text { set => LbItems.Text = value; }
+        public override string Text
+        {
+            get => LbTitle.Text;
+            set => LbTitle.Text = value;
+        }
 
         public FilterComboBox(IEnumerable<string> items)
         {

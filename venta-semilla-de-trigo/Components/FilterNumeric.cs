@@ -2,7 +2,11 @@
 {
     public partial class FilterNumeric : UserControl
     {
-        public override string? Text { set => LbItems.Text = value; }
+        public override string Text
+        {
+            get => LbTitle.Text;
+            set => LbTitle.Text = value;
+        }
 
         public FilterNumeric(int increment)
         {
