@@ -1,9 +1,10 @@
-﻿using venta_semilla_de_trigo.Models;
-
-namespace venta_semilla_de_trigo.Components
+﻿namespace venta_semilla_de_trigo.Components
 {
-    public partial class FilterNumeric : FilterComponent
+    public abstract partial class FilterNumeric : FilterComponent
     {
+        protected int Minimun { get => (int)NudMin.Value; }
+        protected int Maximun { get => (int)NudMax.Value; }
+
         public FilterNumeric(int increment)
         {
             InitializeComponent();
@@ -14,9 +15,6 @@ namespace venta_semilla_de_trigo.Components
             NudMax.Maximum = increment * 100;
         }
 
-        public override Func<Venta, bool> GetCondition()
-        {
-            throw new NotImplementedException();
-        }
+        public void OnLoadComponent(object sender, EventArgs e) => LbTitle.Text = Id;
     }
 }

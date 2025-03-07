@@ -72,6 +72,7 @@
             Size = new Size(409, 92);
             ((System.ComponentModel.ISupportInitialize)NudMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)NudMax).EndInit();
+            Load += OnLoadComponent;
             ResumeLayout(false);
             PerformLayout();
         }
