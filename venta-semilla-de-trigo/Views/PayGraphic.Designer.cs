@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             PayChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            LbTotal = new Label();
             ((System.ComponentModel.ISupportInitialize)PayChart).BeginInit();
             SuspendLayout();
             // 
@@ -52,19 +53,34 @@
             PayChart.Size = new Size(760, 485);
             PayChart.TabIndex = 0;
             // 
+            // LbTotal
+            // 
+            LbTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            LbTotal.AutoSize = true;
+            LbTotal.BackColor = Color.Transparent;
+            LbTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LbTotal.Location = new Point(605, 448);
+            LbTotal.Name = "LbTotal";
+            LbTotal.Size = new Size(64, 28);
+            LbTotal.TabIndex = 1;
+            LbTotal.Text = "Total:";
+            // 
             // PayGraphic
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(760, 485);
+            Controls.Add(LbTotal);
             Controls.Add(PayChart);
             Name = "PayGraphic";
             ((System.ComponentModel.ISupportInitialize)PayChart).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart PayChart;
+        private Label LbTotal;
     }
 }

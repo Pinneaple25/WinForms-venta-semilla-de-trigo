@@ -62,9 +62,10 @@ namespace venta_semilla_de_trigo.Views
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
             var predicate = GetFilter();
+            var keySelector = GetParameter();
 
-            var keys = service.GetCountGroup(predicate, v => v.Solicitante);
-            var view = new PayGraphic(keys);
+            var keys = service.GetCountGroup(predicate, keySelector, out int count);
+            var view = new PayGraphic(keys, count);
             view.Show(this);
         }
 
@@ -108,6 +109,29 @@ namespace venta_semilla_de_trigo.Views
                 expression = expression.And(filter.GetCondition());
 
             return expression;
+        }
+
+        private Func<Venta, string> GetParameter()
+        {
+            if (RbSolicitante.Checked)
+                return v => v.Solicitante;
+
+            if (RbVariedad.Checked)
+                return v => v.Variedad;
+
+            if (RbCategoria.Checked)
+                return v => v.Basica.ToString();
+
+            if (RbCiclo.Checked)
+                return v => v.Ciclo ?? "_N/R";
+
+            if (RbLote.Checked)
+                return v => v.Lote ?? "_N/R";
+
+            if (RbOficio.Checked)
+                return v => v.Oficio ?? "_N/R";
+
+            return v => string.Empty;
         }
     }
 }

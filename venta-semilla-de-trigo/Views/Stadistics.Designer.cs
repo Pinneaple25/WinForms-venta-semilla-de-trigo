@@ -39,7 +39,7 @@
             CbVariedad = new CheckBox();
             CbSolicitud = new CheckBox();
             GbxGraficar = new GroupBox();
-            RbFecha = new RadioButton();
+            RbOficio = new RadioButton();
             RbLote = new RadioButton();
             RbCiclo = new RadioButton();
             RbCategoria = new RadioButton();
@@ -163,7 +163,7 @@
             // 
             // GbxGraficar
             // 
-            GbxGraficar.Controls.Add(RbFecha);
+            GbxGraficar.Controls.Add(RbOficio);
             GbxGraficar.Controls.Add(RbLote);
             GbxGraficar.Controls.Add(RbCiclo);
             GbxGraficar.Controls.Add(RbCategoria);
@@ -176,15 +176,15 @@
             GbxGraficar.TabStop = false;
             GbxGraficar.Text = "Graficar por:";
             // 
-            // RbFecha
+            // RbOficio
             // 
-            RbFecha.AutoSize = true;
-            RbFecha.Location = new Point(180, 86);
-            RbFecha.Name = "RbFecha";
-            RbFecha.Size = new Size(133, 24);
-            RbFecha.TabIndex = 5;
-            RbFecha.Text = "OFICIO Reporte";
-            RbFecha.UseVisualStyleBackColor = true;
+            RbOficio.AutoSize = true;
+            RbOficio.Location = new Point(180, 86);
+            RbOficio.Name = "RbOficio";
+            RbOficio.Size = new Size(133, 24);
+            RbOficio.TabIndex = 5;
+            RbOficio.Text = "OFICIO Reporte";
+            RbOficio.UseVisualStyleBackColor = true;
             // 
             // RbLote
             // 
@@ -305,7 +305,7 @@
         private CheckBox CbLote;
         private CheckBox CbCiclo;
         private GroupBox GbxGraficar;
-        private RadioButton RbFecha;
+        private RadioButton RbOficio;
         private RadioButton RbLote;
         private RadioButton RbCiclo;
         private RadioButton RbCategoria;
