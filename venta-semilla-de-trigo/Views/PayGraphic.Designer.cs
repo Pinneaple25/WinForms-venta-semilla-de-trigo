@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             PayChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)PayChart).BeginInit();
             SuspendLayout();
             // 
             // PayChart
             // 
-            chartArea2.Name = "ChartArea1";
-            PayChart.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            PayChart.ChartAreas.Add(chartArea1);
             PayChart.Dock = DockStyle.Fill;
-            legend2.Name = "Legend1";
-            PayChart.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            PayChart.Legends.Add(legend1);
             PayChart.Location = new Point(0, 0);
             PayChart.Name = "PayChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            PayChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            PayChart.Series.Add(series1);
             PayChart.Size = new Size(760, 485);
             PayChart.TabIndex = 0;
             // 

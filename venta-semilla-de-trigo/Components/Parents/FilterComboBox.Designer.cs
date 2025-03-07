@@ -57,6 +57,7 @@
             Controls.Add(LbTitle);
             Name = "FilterComboBox";
             Size = new Size(345, 88);
+            Load += OnLoadComponent;
             ResumeLayout(false);
             PerformLayout();
         }

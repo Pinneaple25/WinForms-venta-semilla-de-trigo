@@ -1,5 +1,7 @@
 ﻿using venta_semilla_de_trigo.Components;
+using venta_semilla_de_trigo.Models;
 using venta_semilla_de_trigo.Services;
+using venta_semilla_de_trigo.Utilities;
 
 namespace venta_semilla_de_trigo.Views
 {
@@ -9,8 +11,8 @@ namespace venta_semilla_de_trigo.Views
 
         private readonly List<CheckBox> _filterCheckBoxes;
         private readonly Panel[] _filterPanels;
-        private readonly UserControl[] _filterComponents;
-        private readonly List<UserControl> _selectedFilters = [];
+        private readonly FilterComponent[] _filterComponents;
+        private readonly List<FilterComponent> _selectedFilters = [];
 
         public Stadistics(DataService dataService)
         {
@@ -39,15 +41,15 @@ namespace venta_semilla_de_trigo.Views
 
             _filterComponents =
             [
-                new FilterComboBox(service.GetItems(v => v.Solicitante)),
-                new FilterComboBox(service.GetItems(v => v.Variedad)),
+                new FilterSolicitante(service.GetItems(v => v.Solicitante)),
+                new FilterVariedad(service.GetItems(v => v.Variedad)),
                 new FilterCategoria(),
                 new FilterNumeric(50),
                 new FilterNumeric(1000),
-                new FilterComboBox(service.GetItems(v => v.Ciclo)),
-                new FilterComboBox(service.GetItems(v => v.Lote)),
+                new FilterCiclo(service.GetItems(v => v.Ciclo)),
+                new FilterLote(service.GetItems(v => v.Lote)),
                 new FilterDate(),
-                new FilterComboBox(service.GetItems(v => v.Oficio)),
+                new FilterOficio(service.GetItems(v => v.Oficio)),
             ];
 
             foreach (var checkBox in _filterCheckBoxes)
@@ -59,7 +61,9 @@ namespace venta_semilla_de_trigo.Views
 
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
-            var keys = service.GetCountGroup(v => v.Solicitante);
+            var predicate = GetFilter();
+
+            var keys = service.GetCountGroup(predicate, v => v.Solicitante);
             var view = new PayGraphic(keys);
             view.Show(this);
         }
@@ -78,12 +82,10 @@ namespace venta_semilla_de_trigo.Views
             int i = _filterCheckBoxes.IndexOf(checkBox);
             var component = _filterComponents[i];
 
-            component.Text = checkBox.Text;
-
             if (checkBox.Checked)
                 _selectedFilters.Add(component);
             else
-                _selectedFilters.RemoveAll(f => f.Text == component.Text);
+                _selectedFilters.RemoveAll(f => f.Id == component.Id);
 
             DrawFilters();
         }
@@ -96,6 +98,16 @@ namespace venta_semilla_de_trigo.Views
                 if (i < _selectedFilters.Count)
                     _filterPanels[i].Controls.Add(_selectedFilters[i]);
             }
+        }
+
+        private Func<Venta, bool> GetFilter()
+        {
+            Func<Venta, bool> expression = v => true;
+
+            foreach (var filter in _selectedFilters)
+                expression = expression.And(filter.GetCondition());
+
+            return expression;
         }
     }
 }
