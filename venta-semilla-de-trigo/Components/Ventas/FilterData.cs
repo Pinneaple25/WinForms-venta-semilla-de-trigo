@@ -1,4 +1,5 @@
-﻿using venta_semilla_de_trigo.Context;
+﻿using venta_semilla_de_trigo.Components;
+using venta_semilla_de_trigo.Context;
 using venta_semilla_de_trigo.Models;
 using venta_semilla_de_trigo.Utilities;
 
@@ -26,6 +27,7 @@ namespace venta_semilla_de_trigo.Components
                 CbLote,
                 CbFecha,
                 CbOficio,
+                CbGrupo,
             ];
 
             _filterPanels = panels;
@@ -41,6 +43,7 @@ namespace venta_semilla_de_trigo.Components
                 new FilterLote(VentasContext.GetItems(v => v.Lote)),
                 new FilterDate(),
                 new FilterOficio(VentasContext.GetItems(v => v.Oficio)),
+                new FilterGrupo(),
             ];
 
 

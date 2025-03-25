@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             GbxFiltro = new GroupBox();
+            CbGrupo = new CheckBox();
             CbOficio = new CheckBox();
             CbFecha = new CheckBox();
             CbLote = new CheckBox();
@@ -43,6 +44,7 @@
             // 
             // GbxFiltro
             // 
+            GbxFiltro.Controls.Add(CbGrupo);
             GbxFiltro.Controls.Add(CbOficio);
             GbxFiltro.Controls.Add(CbFecha);
             GbxFiltro.Controls.Add(CbLote);
@@ -58,6 +60,16 @@
             GbxFiltro.TabIndex = 2;
             GbxFiltro.TabStop = false;
             GbxFiltro.Text = "Filtrar por:";
+            // 
+            // CbGrupo
+            // 
+            CbGrupo.AutoSize = true;
+            CbGrupo.Location = new Point(211, 56);
+            CbGrupo.Name = "CbGrupo";
+            CbGrupo.Size = new Size(79, 24);
+            CbGrupo.TabIndex = 10;
+            CbGrupo.Text = "GRUPO";
+            CbGrupo.UseVisualStyleBackColor = true;
             // 
             // CbOficio
             // 
@@ -122,7 +134,7 @@
             // CbCategoria
             // 
             CbCategoria.AutoSize = true;
-            CbCategoria.Location = new Point(213, 56);
+            CbCategoria.Location = new Point(211, 26);
             CbCategoria.Name = "CbCategoria";
             CbCategoria.Size = new Size(109, 24);
             CbCategoria.TabIndex = 3;
@@ -144,9 +156,9 @@
             CbSolicitud.AutoSize = true;
             CbSolicitud.Location = new Point(12, 26);
             CbSolicitud.Name = "CbSolicitud";
-            CbSolicitud.Size = new Size(223, 24);
+            CbSolicitud.Size = new Size(118, 24);
             CbSolicitud.TabIndex = 1;
-            CbSolicitud.Text = "SOLICITANTE - COMPRADOR";
+            CbSolicitud.Text = "SOLICITANTE";
             CbSolicitud.UseVisualStyleBackColor = true;
             // 
             // FilterData
@@ -173,5 +185,6 @@
         private CheckBox CbCategoria;
         private CheckBox CbVariedad;
         private CheckBox CbSolicitud;
+        private CheckBox CbGrupo;
     }
 }

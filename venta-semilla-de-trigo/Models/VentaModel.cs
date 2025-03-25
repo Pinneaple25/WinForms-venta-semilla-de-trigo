@@ -8,7 +8,7 @@ namespace venta_semilla_de_trigo.Models
         public string Solicitante { get; set; } = reader.GetString(0);
         public string Variedad { get; set; } = reader.GetString(1);
         public bool Basica { get; set; } = reader.GetString(2).StartsWith('B');
-        public bool Duro { get; set; } = reader.GetValue(3)?.ToString()?.StartsWith('D') ?? false;
+        public bool? Duro { get; set; } = reader.GetValue(3)?.ToString()?.StartsWith('D');
         public int KgIncorporacion { get; set; } = (int?)reader.GetValue(4) ?? 0;
         public int KgSalida { get; set; } = (int)reader.GetDouble(5);
         public int Costo { get; set; } = (int)reader.GetDouble(6);
