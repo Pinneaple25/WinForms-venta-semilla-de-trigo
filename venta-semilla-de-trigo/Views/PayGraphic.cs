@@ -27,10 +27,6 @@ namespace venta_semilla_de_trigo.Views
                 string key = item.Key;
                 if (key.Length > 20)
                     key = key[..20] + "...";
-                else if (key == "True")
-                    key = "Básica";
-                else if (key == "False")
-                    key = "Registrada";
                 series.Points.AddXY(key, item.Value);
             }
 

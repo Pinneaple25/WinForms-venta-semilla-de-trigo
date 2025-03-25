@@ -28,97 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            GbxGraficar = new GroupBox();
-            RbOficio = new RadioButton();
-            RbLote = new RadioButton();
-            RbCiclo = new RadioButton();
-            RbCategoria = new RadioButton();
-            RbVariedad = new RadioButton();
-            RbSolicitante = new RadioButton();
             PFilter1 = new Panel();
             PFilter2 = new Panel();
             PFilter3 = new Panel();
             BtnGraficar = new Button();
             FilterPanel = new Panel();
-            GbxGraficar.SuspendLayout();
+            SelectorPanel = new Panel();
             SuspendLayout();
-            // 
-            // GbxGraficar
-            // 
-            GbxGraficar.Controls.Add(RbOficio);
-            GbxGraficar.Controls.Add(RbLote);
-            GbxGraficar.Controls.Add(RbCiclo);
-            GbxGraficar.Controls.Add(RbCategoria);
-            GbxGraficar.Controls.Add(RbVariedad);
-            GbxGraficar.Controls.Add(RbSolicitante);
-            GbxGraficar.Location = new Point(48, 238);
-            GbxGraficar.Name = "GbxGraficar";
-            GbxGraficar.Size = new Size(365, 121);
-            GbxGraficar.TabIndex = 1;
-            GbxGraficar.TabStop = false;
-            GbxGraficar.Text = "Graficar por:";
-            // 
-            // RbOficio
-            // 
-            RbOficio.AutoSize = true;
-            RbOficio.Location = new Point(180, 86);
-            RbOficio.Name = "RbOficio";
-            RbOficio.Size = new Size(133, 24);
-            RbOficio.TabIndex = 5;
-            RbOficio.Text = "OFICIO Reporte";
-            RbOficio.UseVisualStyleBackColor = true;
-            // 
-            // RbLote
-            // 
-            RbLote.AutoSize = true;
-            RbLote.Location = new Point(13, 86);
-            RbLote.Name = "RbLote";
-            RbLote.Size = new Size(62, 24);
-            RbLote.TabIndex = 4;
-            RbLote.Text = "LOTE";
-            RbLote.UseVisualStyleBackColor = true;
-            // 
-            // RbCiclo
-            // 
-            RbCiclo.AutoSize = true;
-            RbCiclo.Location = new Point(180, 56);
-            RbCiclo.Name = "RbCiclo";
-            RbCiclo.Size = new Size(166, 24);
-            RbCiclo.TabIndex = 3;
-            RbCiclo.Text = "CICLO PRODUCCIÓN";
-            RbCiclo.UseVisualStyleBackColor = true;
-            // 
-            // RbCategoria
-            // 
-            RbCategoria.AutoSize = true;
-            RbCategoria.Location = new Point(13, 56);
-            RbCategoria.Name = "RbCategoria";
-            RbCategoria.Size = new Size(108, 24);
-            RbCategoria.TabIndex = 2;
-            RbCategoria.Text = "CATEGORIA";
-            RbCategoria.UseVisualStyleBackColor = true;
-            // 
-            // RbVariedad
-            // 
-            RbVariedad.AutoSize = true;
-            RbVariedad.Location = new Point(250, 26);
-            RbVariedad.Name = "RbVariedad";
-            RbVariedad.Size = new Size(101, 24);
-            RbVariedad.TabIndex = 1;
-            RbVariedad.Text = "VARIEDAD";
-            RbVariedad.UseVisualStyleBackColor = true;
-            // 
-            // RbSolicitante
-            // 
-            RbSolicitante.AutoSize = true;
-            RbSolicitante.Checked = true;
-            RbSolicitante.Location = new Point(12, 26);
-            RbSolicitante.Name = "RbSolicitante";
-            RbSolicitante.Size = new Size(222, 24);
-            RbSolicitante.TabIndex = 0;
-            RbSolicitante.TabStop = true;
-            RbSolicitante.Text = "SOLICITANTE - COMPRADOR";
-            RbSolicitante.UseVisualStyleBackColor = true;
             // 
             // PFilter1
             // 
@@ -143,7 +59,7 @@
             // 
             // BtnGraficar
             // 
-            BtnGraficar.Location = new Point(48, 381);
+            BtnGraficar.Location = new Point(766, 421);
             BtnGraficar.Name = "BtnGraficar";
             BtnGraficar.Size = new Size(94, 29);
             BtnGraficar.TabIndex = 5;
@@ -158,39 +74,38 @@
             FilterPanel.Size = new Size(365, 209);
             FilterPanel.TabIndex = 6;
             // 
+            // SelectorPanel
+            // 
+            SelectorPanel.Location = new Point(48, 238);
+            SelectorPanel.Name = "SelectorPanel";
+            SelectorPanel.Size = new Size(365, 172);
+            SelectorPanel.TabIndex = 7;
+            // 
             // Stadistics
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(884, 423);
+            ClientSize = new Size(884, 462);
+            Controls.Add(SelectorPanel);
             Controls.Add(FilterPanel);
             Controls.Add(BtnGraficar);
             Controls.Add(PFilter3);
             Controls.Add(PFilter2);
             Controls.Add(PFilter1);
-            Controls.Add(GbxGraficar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimumSize = new Size(902, 451);
             Name = "Stadistics";
             StartPosition = FormStartPosition.CenterScreen;
-            GbxGraficar.ResumeLayout(false);
-            GbxGraficar.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private GroupBox GbxGraficar;
-        private RadioButton RbOficio;
-        private RadioButton RbLote;
-        private RadioButton RbCiclo;
-        private RadioButton RbCategoria;
-        private RadioButton RbVariedad;
-        private RadioButton RbSolicitante;
         private Panel PFilter1;
         private Panel PFilter2;
         private Panel PFilter3;
         private Button BtnGraficar;
         private Panel FilterPanel;
+        private Panel SelectorPanel;
     }
 }
