@@ -31,6 +31,7 @@
             BtnOpenFolder = new Button();
             BtnEstadisticas = new Button();
             OpenFile = new OpenFileDialog();
+            BtnEconomia = new Button();
             SuspendLayout();
             // 
             // BtnOpenFolder
@@ -58,11 +59,23 @@
             // 
             OpenFile.Filter = "Archivos de Excel|*.xlsx; *.xls";
             // 
+            // BtnEconomia
+            // 
+            BtnEconomia.Enabled = false;
+            BtnEconomia.Location = new Point(237, 25);
+            BtnEconomia.Name = "BtnEconomia";
+            BtnEconomia.Size = new Size(120, 63);
+            BtnEconomia.TabIndex = 2;
+            BtnEconomia.Text = "Estadísticas económica";
+            BtnEconomia.UseVisualStyleBackColor = true;
+            BtnEconomia.Click += BtnEconomia_Click;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(282, 215);
+            ClientSize = new Size(431, 215);
+            Controls.Add(BtnEconomia);
             Controls.Add(BtnEstadisticas);
             Controls.Add(BtnOpenFolder);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -77,5 +90,6 @@
         private Button BtnOpenFolder;
         private Button BtnEstadisticas;
         private OpenFileDialog OpenFile;
+        private Button BtnEconomia;
     }
 }

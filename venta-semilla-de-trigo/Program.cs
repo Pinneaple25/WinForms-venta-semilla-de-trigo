@@ -26,6 +26,7 @@ namespace venta_semilla_de_trigo
             .ConfigureServices((context, services) => {
                 services.AddTransient<Home>();
                 services.AddTransient<Stadistics>();
-                });
+                services.AddTransient<EconomicFilter>();
+            });
     }
 }

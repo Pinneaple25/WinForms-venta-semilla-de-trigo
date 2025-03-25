@@ -19,6 +19,7 @@ namespace venta_semilla_de_trigo.Views
                 return;
 
             BtnEstadisticas.Enabled = true;
+            BtnEconomia.Enabled = true;
 
             VentasContext.Insert(OpenFile.FileName);
         }
@@ -27,6 +28,14 @@ namespace venta_semilla_de_trigo.Views
         {
             Hide();
             var view = provider.GetRequiredService<Stadistics>();
+            view.ShowDialog(this);
+            Show();
+        }
+
+        private void BtnEconomia_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var view = provider.GetRequiredService<EconomicFilter>();
             view.ShowDialog(this);
             Show();
         }
