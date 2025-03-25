@@ -56,7 +56,7 @@
             // 
             // OpenFile
             // 
-            OpenFile.Filter = "Archivos de Excel|*.xlsx";
+            OpenFile.Filter = "Archivos de Excel|*.xlsx; *.xls";
             // 
             // Home
             // 

@@ -14,7 +14,7 @@ namespace venta_semilla_de_trigo.Utilities
 
             if (!EsArchivoBD(reader))
             {
-                var fileName = filePath.Split('\\').Last().Replace(".xlsx", "");
+                var fileName = filePath.Split('\\').Last().Replace(".xlsx", "").Replace(".xls", "");
                 MessageBox.Show($"El archivo { fileName } no contiene la estructura de la base de datos correcta.");
                 return null;
             }
@@ -31,9 +31,10 @@ namespace venta_semilla_de_trigo.Utilities
 
                     ventas.Add(new(reader));
                 }
-                catch 
+                catch
                 {
                     MessageBox.Show($"Error al leer la columna: { i }");
+                    return null;
                 }
             }
             return ventas;
