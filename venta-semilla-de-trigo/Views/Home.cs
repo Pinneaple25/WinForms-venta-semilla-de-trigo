@@ -1,17 +1,15 @@
 using Microsoft.Extensions.DependencyInjection;
-using venta_semilla_de_trigo.Services;
+using venta_semilla_de_trigo.Context;
 
 namespace venta_semilla_de_trigo.Views
 {
     public partial class Home : Form
     {
-        private readonly DataService service;
         private readonly IServiceProvider provider;
 
-        public Home(DataService dataService, IServiceProvider serviceProvider)
+        public Home(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            service = dataService;
             provider = serviceProvider;
         }
 
@@ -22,7 +20,7 @@ namespace venta_semilla_de_trigo.Views
 
             BtnEstadisticas.Enabled = true;
 
-            service.Insert(OpenFile.FileName);
+            VentasContext.Insert(OpenFile.FileName);
         }
 
         private void BtnEstadisticas_Click(object sender, EventArgs e)

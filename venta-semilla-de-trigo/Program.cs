@@ -1,6 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using venta_semilla_de_trigo.Services;
 using venta_semilla_de_trigo.Views;
 
 namespace venta_semilla_de_trigo
@@ -25,7 +24,6 @@ namespace venta_semilla_de_trigo
 
         static IHostBuilder CreateHostBuilder() => Host.CreateDefaultBuilder()
             .ConfigureServices((context, services) => {
-                services.AddSingleton<DataService>();
                 services.AddTransient<Home>();
                 services.AddTransient<Stadistics>();
                 });

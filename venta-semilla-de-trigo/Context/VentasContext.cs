@@ -1,13 +1,13 @@
 ﻿using venta_semilla_de_trigo.Models;
 using venta_semilla_de_trigo.Utilities;
 
-namespace venta_semilla_de_trigo.Services
+namespace venta_semilla_de_trigo.Context
 {
-    public class DataService
+    public static class VentasContext
     {
-        private readonly List<Venta> ventas = [];
+        private static List<Venta> Data { get; } = [];
 
-        public void Insert(string filePath)
+        public static void Insert(string filePath)
         {
             var nuevasVentas = ExcelHandler.ParseVentas(filePath);
 
@@ -16,19 +16,19 @@ namespace venta_semilla_de_trigo.Services
                 return;
             }
 
-            ventas.AddRange(nuevasVentas);
+            Data.AddRange(nuevasVentas);
             MessageBox.Show($"Se han registrado {nuevasVentas.Count} nuevas ventas.");
         }
 
-        public IEnumerable<TOut> GetItems<TOut>(Func<Venta, TOut> predicate) => 
-            ventas
+        public static IEnumerable<TOut> GetItems<TOut>(Func<Venta, TOut> predicate) => 
+            Data
             .Select(predicate)
             .Distinct()
             .OrderBy(x => x);
 
-        public Dictionary<string, int> GetCountGroup(Func<Venta, bool> predicate, Func<Venta, string> keySelector, out int count)
+        public static Dictionary<string, int> GetCountGroup(Func<Venta, bool> predicate, Func<Venta, string> keySelector, out int count)
         {
-            var registers = ventas.Where(predicate);
+            var registers = Data.Where(predicate);
             count = registers.Count();
 
             return registers.GroupBy(keySelector).ToDictionary(g => g.Key, g => g.Count());
