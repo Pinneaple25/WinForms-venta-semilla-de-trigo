@@ -31,7 +31,8 @@
             BtnOpenFolder = new Button();
             BtnEstadisticas = new Button();
             OpenFile = new OpenFileDialog();
-            BtnEconomia = new Button();
+            BtnContabilidad = new Button();
+            BtnFinanzas = new Button();
             SuspendLayout();
             // 
             // BtnOpenFolder
@@ -59,23 +60,34 @@
             // 
             OpenFile.Filter = "Archivos de Excel|*.xlsx; *.xls";
             // 
-            // BtnEconomia
+            // BtnContabilidad
             // 
-            BtnEconomia.Enabled = false;
-            BtnEconomia.Location = new Point(237, 25);
-            BtnEconomia.Name = "BtnEconomia";
-            BtnEconomia.Size = new Size(120, 63);
-            BtnEconomia.TabIndex = 2;
-            BtnEconomia.Text = "Estadísticas económica";
-            BtnEconomia.UseVisualStyleBackColor = true;
-            BtnEconomia.Click += BtnEconomia_Click;
+            BtnContabilidad.Enabled = false;
+            BtnContabilidad.Location = new Point(237, 25);
+            BtnContabilidad.Name = "BtnContabilidad";
+            BtnContabilidad.Size = new Size(120, 63);
+            BtnContabilidad.TabIndex = 2;
+            BtnContabilidad.Text = "Contabilidad";
+            BtnContabilidad.UseVisualStyleBackColor = true;
+            BtnContabilidad.Click += BtnEconomia_Click;
+            // 
+            // BtnFinanzas
+            // 
+            BtnFinanzas.Enabled = false;
+            BtnFinanzas.Location = new Point(237, 117);
+            BtnFinanzas.Name = "BtnFinanzas";
+            BtnFinanzas.Size = new Size(120, 63);
+            BtnFinanzas.TabIndex = 3;
+            BtnFinanzas.Text = "Finanzas";
+            BtnFinanzas.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(431, 215);
-            Controls.Add(BtnEconomia);
+            Controls.Add(BtnFinanzas);
+            Controls.Add(BtnContabilidad);
             Controls.Add(BtnEstadisticas);
             Controls.Add(BtnOpenFolder);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -90,6 +102,7 @@
         private Button BtnOpenFolder;
         private Button BtnEstadisticas;
         private OpenFileDialog OpenFile;
-        private Button BtnEconomia;
+        private Button BtnContabilidad;
+        private Button BtnFinanzas;
     }
 }

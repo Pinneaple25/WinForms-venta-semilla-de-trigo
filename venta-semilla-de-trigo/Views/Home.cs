@@ -19,7 +19,7 @@ namespace venta_semilla_de_trigo.Views
                 return;
 
             BtnEstadisticas.Enabled = true;
-            BtnEconomia.Enabled = true;
+            BtnContabilidad.Enabled = true;
 
             VentasContext.Insert(OpenFile.FileName);
         }
