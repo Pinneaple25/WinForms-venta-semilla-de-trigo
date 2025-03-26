@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             BarChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            LbTotal = new Label();
             ((System.ComponentModel.ISupportInitialize)BarChart).BeginInit();
             SuspendLayout();
             // 
@@ -46,25 +47,41 @@
             BarChart.Name = "BarChart";
             BarChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             BarChart.Series.Add(series1);
             BarChart.Size = new Size(800, 450);
             BarChart.TabIndex = 0;
             // 
+            // LbTotal
+            // 
+            LbTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            LbTotal.AutoSize = true;
+            LbTotal.BackColor = Color.Transparent;
+            LbTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LbTotal.Location = new Point(724, 413);
+            LbTotal.Name = "LbTotal";
+            LbTotal.Size = new Size(64, 28);
+            LbTotal.TabIndex = 2;
+            LbTotal.Text = "Total:";
+            // 
             // BarGraphic
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(LbTotal);
             Controls.Add(BarChart);
             Name = "BarGraphic";
             ((System.ComponentModel.ISupportInitialize)BarChart).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart BarChart;
+        private Label LbTotal;
     }
 }

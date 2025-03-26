@@ -33,5 +33,11 @@ namespace venta_semilla_de_trigo.Context
 
             return registers.GroupBy(keySelector).ToDictionary(g => g.Key, g => g.Count());
         }
+
+        public static Dictionary<string, int> GetCostGroup(Func<Venta, bool> predicate, Func<Venta, string> keySelector) =>
+            Data
+            .Where(predicate)
+            .GroupBy(keySelector)
+            .ToDictionary(g => g.Key, g => g.Sum(x => x.Costo));
     }
 }

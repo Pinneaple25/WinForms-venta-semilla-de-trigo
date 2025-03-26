@@ -30,11 +30,15 @@
         {
             BtnGraficar = new Button();
             SelectorPanel = new Panel();
+            FilterPanel = new Panel();
+            PFilter3 = new Panel();
+            PFilter2 = new Panel();
+            PFilter1 = new Panel();
             SuspendLayout();
             // 
             // BtnGraficar
             // 
-            BtnGraficar.Location = new Point(37, 193);
+            BtnGraficar.Location = new Point(715, 405);
             BtnGraficar.Name = "BtnGraficar";
             BtnGraficar.Size = new Size(94, 29);
             BtnGraficar.TabIndex = 7;
@@ -44,16 +48,48 @@
             // 
             // SelectorPanel
             // 
-            SelectorPanel.Location = new Point(37, 22);
+            SelectorPanel.Location = new Point(24, 227);
             SelectorPanel.Name = "SelectorPanel";
-            SelectorPanel.Size = new Size(379, 158);
+            SelectorPanel.Size = new Size(365, 172);
             SelectorPanel.TabIndex = 8;
+            // 
+            // FilterPanel
+            // 
+            FilterPanel.Location = new Point(24, 12);
+            FilterPanel.Name = "FilterPanel";
+            FilterPanel.Size = new Size(365, 209);
+            FilterPanel.TabIndex = 7;
+            // 
+            // PFilter3
+            // 
+            PFilter3.Location = new Point(413, 274);
+            PFilter3.Name = "PFilter3";
+            PFilter3.Size = new Size(396, 125);
+            PFilter3.TabIndex = 11;
+            // 
+            // PFilter2
+            // 
+            PFilter2.Location = new Point(413, 143);
+            PFilter2.Name = "PFilter2";
+            PFilter2.Size = new Size(396, 125);
+            PFilter2.TabIndex = 10;
+            // 
+            // PFilter1
+            // 
+            PFilter1.Location = new Point(413, 12);
+            PFilter1.Name = "PFilter1";
+            PFilter1.Size = new Size(396, 125);
+            PFilter1.TabIndex = 9;
             // 
             // EconomicFilter
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(457, 234);
+            ClientSize = new Size(831, 446);
+            Controls.Add(PFilter3);
+            Controls.Add(PFilter2);
+            Controls.Add(PFilter1);
+            Controls.Add(FilterPanel);
             Controls.Add(SelectorPanel);
             Controls.Add(BtnGraficar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -66,5 +102,9 @@
 
         private Button BtnGraficar;
         private Panel SelectorPanel;
+        private Panel FilterPanel;
+        private Panel PFilter3;
+        private Panel PFilter2;
+        private Panel PFilter1;
     }
 }
