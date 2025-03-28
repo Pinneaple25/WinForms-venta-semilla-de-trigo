@@ -65,6 +65,7 @@
             LbTotal.Size = new Size(64, 28);
             LbTotal.TabIndex = 2;
             LbTotal.Text = "Total:";
+            LbTotal.Visible = false;
             // 
             // BarGraphic
             // 
