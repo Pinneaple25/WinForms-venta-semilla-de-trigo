@@ -26,18 +26,10 @@ namespace venta_semilla_de_trigo.Context
             .Distinct()
             .OrderBy(x => x);
 
-        public static Dictionary<string, int> GetCountGroup(Func<Venta, bool> predicate, Func<Venta, string> keySelector, out int count)
-        {
-            var registers = Data.Where(predicate);
-            count = registers.Count();
-
-            return registers.GroupBy(keySelector).ToDictionary(g => g.Key, g => g.Count());
-        }
-
-        public static Dictionary<string, int> GetCostGroup(Func<Venta, bool> predicate, Func<Venta, string> keySelector) =>
+        public static Dictionary<string, int> GetCountGroup(Func<Venta, bool> predicate, Func<Venta, string> keySelector, Func<IGrouping<string, Venta>, int> groupBy) =>
             Data
             .Where(predicate)
             .GroupBy(keySelector)
-            .ToDictionary(g => g.Key, g => g.Sum(x => x.Costo));
+            .ToDictionary(g => g.Key, groupBy);
     }
 }

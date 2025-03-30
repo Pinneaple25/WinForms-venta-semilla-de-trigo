@@ -29,10 +29,10 @@ namespace venta_semilla_de_trigo.Views
         {
             var predicate = dataFilter.GetFilter();
             var keySelector = selectorData.GetParameter();
-            var keys = VentasContext.GetCountGroup(predicate, keySelector, out int count);
+            var keys = VentasContext.GetCountGroup(predicate, keySelector, g => g.Count());
 
             var title = GenerateTag();
-            var view = new PayGraphic(keys, count, title);
+            var view = new PayGraphic(keys, title);
 
             view.Show(this);
         }

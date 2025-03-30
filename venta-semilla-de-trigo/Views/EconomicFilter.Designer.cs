@@ -34,11 +34,12 @@
             PFilter3 = new Panel();
             PFilter2 = new Panel();
             PFilter1 = new Panel();
+            RbBy = new CheckBox();
             SuspendLayout();
             // 
             // BtnGraficar
             // 
-            BtnGraficar.Location = new Point(715, 405);
+            BtnGraficar.Location = new Point(715, 431);
             BtnGraficar.Name = "BtnGraficar";
             BtnGraficar.Size = new Size(94, 29);
             BtnGraficar.TabIndex = 7;
@@ -81,11 +82,23 @@
             PFilter1.Size = new Size(396, 125);
             PFilter1.TabIndex = 9;
             // 
+            // TbBy
+            // 
+            RbBy.AutoSize = true;
+            RbBy.Location = new Point(24, 420);
+            RbBy.Name = "TbBy";
+            RbBy.Size = new Size(128, 24);
+            RbBy.TabIndex = 12;
+            RbBy.Text = "Mostrar costos";
+            RbBy.UseVisualStyleBackColor = true;
+            RbBy.CheckedChanged += TbBy_CheckedChanged;
+            // 
             // EconomicFilter
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(831, 446);
+            ClientSize = new Size(831, 472);
+            Controls.Add(RbBy);
             Controls.Add(PFilter3);
             Controls.Add(PFilter2);
             Controls.Add(PFilter1);
@@ -96,6 +109,7 @@
             MaximizeBox = false;
             Name = "EconomicFilter";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -106,5 +120,6 @@
         private Panel PFilter3;
         private Panel PFilter2;
         private Panel PFilter1;
+        private CheckBox RbBy;
     }
 }

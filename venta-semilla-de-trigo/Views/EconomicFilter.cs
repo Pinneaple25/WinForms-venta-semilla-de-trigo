@@ -20,7 +20,7 @@ namespace venta_semilla_de_trigo.Views
                 ]);
 
             selectorData = new SelectorData();
-            
+
             FilterPanel.Controls.Add(dataFilter);
             SelectorPanel.Controls.Add(selectorData);
         }
@@ -29,7 +29,11 @@ namespace venta_semilla_de_trigo.Views
         {
             var predicate = dataFilter.GetFilter();
             var keySelector = selectorData.GetParameter();
-            var values = VentasContext.GetCostGroup(predicate, keySelector);
+
+            var values = VentasContext.GetCountGroup(
+                dataFilter.GetFilter(), 
+                selectorData.GetParameter(),
+                g => g.Sum(v => RbBy.Checked ? v.KgSalida : v.Costo));
 
             var title = GenerateTag();
             BarGraphic view = new(values, title);
@@ -40,11 +44,18 @@ namespace venta_semilla_de_trigo.Views
         {
             var filters = dataFilter.GetValues();
             var selector = selectorData.GetValuesTags();
+            var param = RbBy.Checked ? "Kilogramos de salida" : "Costo";
 
             if (filters != "")
-                return $"Costo de las ventas de {filters}; por sus {selector}.";
+                return $"{param} de las ventas de {filters}; por sus {selector}.";
 
-            return $"Costo de las ventas por sus {selector}.";
+            return $"{param} de las ventas por sus {selector}.";
+        }
+
+        private void TbBy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton radioButton)
+                radioButton.Text = radioButton.Checked ? "Mostrar por kilogramos de salida." : "Mostrar por costo.";
         }
     }
 }
