@@ -15,9 +15,11 @@
         {
             InitializeComponent();
             items = items.Select(x => string.IsNullOrWhiteSpace(x) ? "_N/R" : x);
-            CbxItems.Items.AddRange(items.ToArray());
+            CbxItems.Items.AddRange([.. items]);
         }
 
         public void OnLoadComponent(object sender, EventArgs e) => LbTitle.Text = Id;
+
+        public override string GetValue() => CbxItems.Text;
     }
 }

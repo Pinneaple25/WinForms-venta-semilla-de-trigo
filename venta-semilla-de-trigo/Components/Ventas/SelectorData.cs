@@ -36,5 +36,31 @@ namespace venta_semilla_de_trigo.Components.Ventas
 
             return v => string.Empty;
         }
+
+        public string? GetValuesTags()
+        {
+            if (RbSolicitante.Checked)
+                return "solicitantes";
+
+            if (RbVariedad.Checked)
+                return "variedades";
+
+            if (RbCategoria.Checked)
+                return "categorías";
+
+            if (RbGrupo.Checked)
+                return "grupos";
+
+            if (RbCiclo.Checked)
+                return "ciclos";
+
+            if (RbLote.Checked)
+                return "lotes";
+
+            if (RbOficio.Checked)
+                return "oficios";
+
+            return null;
+        }
     }
 }

@@ -4,11 +4,12 @@ namespace venta_semilla_de_trigo.Views
 {
     public partial class BarGraphic : Form
     {
-        public BarGraphic(Dictionary<string, int> data)
+        public BarGraphic(Dictionary<string, int> data, string title)
         {
             InitializeComponent();
             InitializeChart(data);
             var total = data.Sum(d => d.Value);
+            Text = title;
             LbTotal.Text = $"Total: {total:n2}";
         }
 

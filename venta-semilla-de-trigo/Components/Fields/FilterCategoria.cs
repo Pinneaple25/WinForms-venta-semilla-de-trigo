@@ -18,5 +18,13 @@ namespace venta_semilla_de_trigo.Components
 
             return v => v.Basica == RbBasica.Checked;
         }
+
+        public override string? GetValue()
+        {
+            if (RbTodos.Checked)
+                return null;
+
+            return RbBasica.Checked ? "basicas" : "registradas";
+        }
     }
 }

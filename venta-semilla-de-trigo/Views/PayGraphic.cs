@@ -4,10 +4,11 @@ namespace venta_semilla_de_trigo.Views
 {
     public partial class PayGraphic : Form
     {
-        public PayGraphic(Dictionary<string, int> data, int count)
+        public PayGraphic(Dictionary<string, int> data, int count, string title)
         {
             InitializeComponent();
             InitializeChart(data);
+            Text = title;
             LbTotal.Text = $"Total: { count }";
         }
 

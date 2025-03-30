@@ -15,6 +15,8 @@
             NudMax.Maximum = increment * 100;
         }
 
+        public override string GetValue() => $"entre {NudMin.Value} y {NudMax.Value}";
+
         public void OnLoadComponent(object sender, EventArgs e) => LbTitle.Text = Id;
     }
 }

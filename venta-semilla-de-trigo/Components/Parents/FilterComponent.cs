@@ -7,5 +7,7 @@ namespace venta_semilla_de_trigo.Components
         public string Id { get; protected set; } = string.Empty;
 
         public abstract Func<Venta, bool> GetCondition();
+
+        public abstract string? GetValue();
     }
 }

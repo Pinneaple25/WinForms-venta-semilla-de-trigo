@@ -64,6 +64,7 @@
             LbTotal.Size = new Size(64, 28);
             LbTotal.TabIndex = 1;
             LbTotal.Text = "Total:";
+            LbTotal.Visible = false;
             // 
             // PayGraphic
             // 

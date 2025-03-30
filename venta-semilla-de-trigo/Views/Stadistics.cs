@@ -29,10 +29,23 @@ namespace venta_semilla_de_trigo.Views
         {
             var predicate = dataFilter.GetFilter();
             var keySelector = selectorData.GetParameter();
-
             var keys = VentasContext.GetCountGroup(predicate, keySelector, out int count);
-            var view = new PayGraphic(keys, count);
+
+            var title = GenerateTag();
+            var view = new PayGraphic(keys, count, title);
+
             view.Show(this);
+        }
+
+        private string GenerateTag()
+        {
+            var filters = dataFilter.GetValues();
+            var selector = selectorData.GetValuesTags();
+
+            if (filters != "")
+                return $"Ventas de {filters}; por sus {selector}.";
+
+            return $"Ventas por sus {selector}.";
         }
     }
 }

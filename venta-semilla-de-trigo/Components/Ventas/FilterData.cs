@@ -1,5 +1,4 @@
-﻿using venta_semilla_de_trigo.Components;
-using venta_semilla_de_trigo.Context;
+﻿using venta_semilla_de_trigo.Context;
 using venta_semilla_de_trigo.Models;
 using venta_semilla_de_trigo.Utilities;
 
@@ -94,6 +93,24 @@ namespace venta_semilla_de_trigo.Components
                 expression = expression.And(filter.GetCondition());
 
             return expression;
+        }
+
+        public string GetValues()
+        {
+            List<string> values = [];
+
+            foreach(var filter in _selectedFilters)
+            {
+                string? value = filter.GetValue();
+                if (value == null) continue;
+                values.Add(value);
+            }
+
+            if (values.Count == 0) return string.Empty;
+
+            if (values.Count == 1) return values[0];
+
+            return $"{string.Join(", ", values[..^1])} y {values.Last()}";
         }
     }
 }

@@ -18,5 +18,13 @@ namespace venta_semilla_de_trigo.Components
 
             return v => v.Duro != null && v.Duro == RbDuro.Checked;
         }
+
+        public override string? GetValue()
+        {
+            if (RbTodos.Checked)
+                return "grupo sin registrar";
+
+            return RbDuro.Checked ? "duros" : "harineros";
+        }
     }
 }
