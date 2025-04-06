@@ -20,22 +20,30 @@ namespace venta_semilla_de_trigo.Views
 
             BtnEstadisticas.Enabled = true;
             BtnContabilidad.Enabled = true;
+            BtnFinanzas.Enabled = true;
 
             VentasContext.Insert(OpenFile.FileName);
         }
 
         private void BtnEstadisticas_Click(object sender, EventArgs e)
         {
-            Hide();
-            var view = provider.GetRequiredService<Stadistics>();
-            view.ShowDialog(this);
-            Show();
+            OpenView<Stadistics>();
         }
 
         private void BtnEconomia_Click(object sender, EventArgs e)
         {
+            OpenView<EconomicFilter>();
+        }
+
+        private void BtnFinanzas_Click(object sender, EventArgs e)
+        {
+            OpenView<Finances>();
+        }
+
+        private void OpenView<T>() where T : Form
+        {
             Hide();
-            var view = provider.GetRequiredService<EconomicFilter>();
+            var view = provider.GetRequiredService<T>();
             view.ShowDialog(this);
             Show();
         }

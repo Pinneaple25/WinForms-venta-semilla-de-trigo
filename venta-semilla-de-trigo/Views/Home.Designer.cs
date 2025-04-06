@@ -78,8 +78,9 @@
             BtnFinanzas.Name = "BtnFinanzas";
             BtnFinanzas.Size = new Size(120, 63);
             BtnFinanzas.TabIndex = 3;
-            BtnFinanzas.Text = "Finanzas";
+            BtnFinanzas.Text = "Gráficas financieras";
             BtnFinanzas.UseVisualStyleBackColor = true;
+            BtnFinanzas.Click += BtnFinanzas_Click;
             // 
             // Home
             // 

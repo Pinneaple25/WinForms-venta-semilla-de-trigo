@@ -27,6 +27,7 @@ namespace venta_semilla_de_trigo
                 services.AddTransient<Home>();
                 services.AddTransient<Stadistics>();
                 services.AddTransient<EconomicFilter>();
+                services.AddTransient<Finances>();
             });
     }
 }
