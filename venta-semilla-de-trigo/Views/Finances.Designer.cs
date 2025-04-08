@@ -39,6 +39,7 @@
             BtnGraficar = new Button();
             filterDate = new venta_semilla_de_trigo.Components.FilterDate();
             PFiltro = new Panel();
+            CbGlobal = new CheckBox();
             GbMuestreo.SuspendLayout();
             SuspendLayout();
             // 
@@ -142,34 +143,50 @@
             BtnGraficar.UseVisualStyleBackColor = true;
             BtnGraficar.Click += BtnGraficar_Click;
             // 
-            // filterDate1
+            // filterDate
             // 
-            filterDate.Location = new Point(341, 22);
-            filterDate.Name = "filterDate1";
+            filterDate.Location = new Point(18, 12);
+            filterDate.Name = "filterDate";
             filterDate.Size = new Size(279, 129);
             filterDate.TabIndex = 2;
             // 
             // PFiltro
             // 
-            PFiltro.Location = new Point(18, 26);
+            PFiltro.Location = new Point(319, 12);
             PFiltro.Name = "PFiltro";
-            PFiltro.Size = new Size(321, 125);
+            PFiltro.Size = new Size(321, 95);
             PFiltro.TabIndex = 3;
+            PFiltro.Visible = false;
+            // 
+            // CbGlobal
+            // 
+            CbGlobal.AutoSize = true;
+            CbGlobal.Location = new Point(357, 117);
+            CbGlobal.Name = "CbGlobal";
+            CbGlobal.Size = new Size(75, 24);
+            CbGlobal.TabIndex = 4;
+            CbGlobal.Text = "Global";
+            CbGlobal.UseVisualStyleBackColor = true;
+            CbGlobal.CheckedChanged += CbGlobal_CheckedChanged;
             // 
             // Finances
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(698, 296);
+            Controls.Add(CbGlobal);
             Controls.Add(PFiltro);
             Controls.Add(filterDate);
             Controls.Add(BtnGraficar);
             Controls.Add(GbMuestreo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Finances";
+            StartPosition = FormStartPosition.CenterScreen;
             GbMuestreo.ResumeLayout(false);
             GbMuestreo.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -185,5 +202,6 @@
         private Button BtnGraficar;
         private Components.FilterDate filterDate;
         private Panel PFiltro;
+        private CheckBox CbGlobal;
     }
 }

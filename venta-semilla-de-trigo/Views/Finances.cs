@@ -1,6 +1,6 @@
 ﻿using venta_semilla_de_trigo.Components;
-using venta_semilla_de_trigo.Components.Ventas;
 using venta_semilla_de_trigo.Context;
+using venta_semilla_de_trigo.Models;
 
 namespace venta_semilla_de_trigo.Views
 {
@@ -18,7 +18,7 @@ namespace venta_semilla_de_trigo.Views
         {
             try
             {
-                var predicate = filterSolicitante.GetCondition();
+                var predicate = GetPredicate();
                 var months = GetMonths();
                 var minDate = filterDate.GetMinDate();
                 var maxDate = filterDate.GetMaxDate();
@@ -35,20 +35,35 @@ namespace venta_semilla_de_trigo.Views
             }
         }
 
+        private void CbGlobal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is not CheckBox check) return;
+
+            check.Text = check.Checked ? "Por solicitante" : "Global";
+            PFiltro.Visible = check.Checked;
+        }
+
+        private Func<Venta, bool> GetPredicate()
+        {
+            return CbGlobal.Checked
+                ? filterSolicitante.GetCondition()
+                : v => true;
+        }
+
         private int GetMonths()
         {
             if (RbLustros.Checked) return 12 * 5;
 
             if (RbAnual.Checked) return 12;
-            
+
             if (RbSemestral.Checked) return 6;
-            
+
             if (RbCuatrimestral.Checked) return 4;
-            
+
             if (RbTrimestral.Checked) return 3;
-            
+
             if (RbBimestral.Checked) return 2;
-            
+
             if (RbMensual.Checked) return 1;
 
             throw new NotImplementedException();
@@ -58,7 +73,9 @@ namespace venta_semilla_de_trigo.Views
         {
             var solicitante = filterSolicitante.GetValue();
             var fecha = filterDate.GetValue();
-            return $"Evolución de costos de {solicitante}, {fecha}";
+            return CbGlobal.Checked 
+                ? $"Evolución de costos de {solicitante}, {fecha}"
+                : $"Evolución de costos {fecha}";
         }
     }
 }
