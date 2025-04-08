@@ -31,5 +31,34 @@ namespace venta_semilla_de_trigo.Context
             .Where(predicate)
             .GroupBy(keySelector)
             .ToDictionary(g => g.Key, groupBy);
+
+        public static Dictionary<DateTime, int> GetFinances(Func<Venta, bool> predicate, DateTime minDate, DateTime maxDate, int months)
+        {
+            var result = new Dictionary<DateTime, int>();
+            var data = Data
+                .Where(predicate)
+                .Where(v => v.Fecha >= minDate)
+                .Where(v => v.Fecha < maxDate);
+
+            if (!data.Any()) return result;
+
+            var iMaxDate = minDate.AddMonths(months);
+            var iMinDate = minDate;
+
+            do
+            {
+                var costs = data
+                    .Where(v => v.Fecha >= iMinDate)
+                    .Where(v => v.Fecha < iMaxDate)
+                    .Sum(v => v.Costo);
+
+                result.Add(iMinDate, costs);
+
+                iMinDate = iMaxDate;
+                iMaxDate = iMaxDate.AddMonths(months);
+            } while (iMaxDate < maxDate);
+
+            return result;
+        }
     }
 }

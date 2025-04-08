@@ -37,7 +37,7 @@
             RbAnual = new RadioButton();
             RbLustros = new RadioButton();
             BtnGraficar = new Button();
-            filterDate1 = new venta_semilla_de_trigo.Components.FilterDate();
+            filterDate = new venta_semilla_de_trigo.Components.FilterDate();
             PFiltro = new Panel();
             GbMuestreo.SuspendLayout();
             SuspendLayout();
@@ -144,10 +144,10 @@
             // 
             // filterDate1
             // 
-            filterDate1.Location = new Point(341, 22);
-            filterDate1.Name = "filterDate1";
-            filterDate1.Size = new Size(279, 129);
-            filterDate1.TabIndex = 2;
+            filterDate.Location = new Point(341, 22);
+            filterDate.Name = "filterDate1";
+            filterDate.Size = new Size(279, 129);
+            filterDate.TabIndex = 2;
             // 
             // PFiltro
             // 
@@ -162,7 +162,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(698, 296);
             Controls.Add(PFiltro);
-            Controls.Add(filterDate1);
+            Controls.Add(filterDate);
             Controls.Add(BtnGraficar);
             Controls.Add(GbMuestreo);
             MaximizeBox = false;
@@ -183,7 +183,7 @@
         private RadioButton RbCuatrimestral;
         private RadioButton RbSemestral;
         private Button BtnGraficar;
-        private Components.FilterDate filterDate1;
+        private Components.FilterDate filterDate;
         private Panel PFiltro;
     }
 }

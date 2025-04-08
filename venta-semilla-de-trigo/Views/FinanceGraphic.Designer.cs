@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            k = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)k).BeginInit();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            FinanceChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)FinanceChart).BeginInit();
             SuspendLayout();
             // 
-            // k
+            // FinanceChart
             // 
-            chartArea1.Name = "ChartArea1";
-            k.ChartAreas.Add(chartArea1);
-            k.Dock = DockStyle.Fill;
-            legend1.Name = "Legend1";
-            k.Legends.Add(legend1);
-            k.Location = new Point(0, 0);
-            k.Name = "k";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            k.Series.Add(series1);
-            k.Size = new Size(800, 450);
-            k.TabIndex = 0;
-            k.Text = "chart1";
+            chartArea2.Name = "ChartArea1";
+            FinanceChart.ChartAreas.Add(chartArea2);
+            FinanceChart.Dock = DockStyle.Fill;
+            legend2.Name = "Legend1";
+            FinanceChart.Legends.Add(legend2);
+            FinanceChart.Location = new Point(0, 0);
+            FinanceChart.Name = "FinanceChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            FinanceChart.Series.Add(series2);
+            FinanceChart.Size = new Size(800, 450);
+            FinanceChart.TabIndex = 0;
+            FinanceChart.Text = "chart1";
             // 
             // FinanceGraphic
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(k);
+            Controls.Add(FinanceChart);
             Name = "FinanceGraphic";
-            ((System.ComponentModel.ISupportInitialize)k).EndInit();
+            ((System.ComponentModel.ISupportInitialize)FinanceChart).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart k;
+        private System.Windows.Forms.DataVisualization.Charting.Chart FinanceChart;
     }
 }

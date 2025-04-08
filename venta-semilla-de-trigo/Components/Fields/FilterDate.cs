@@ -20,8 +20,8 @@ namespace venta_semilla_de_trigo.Components
 
         public override string GetValue() => $"entre {CbxMinMonth.Text} del {NudMinYear.Value} al {CbxMaxMonth.Text} del {NudMaxYear.Value}";
 
-        private DateTime GetMinDate() => new((int)NudMinYear.Value, CbxMinMonth.SelectedIndex + 1, 1);
+        public DateTime GetMinDate() => new((int)NudMinYear.Value, CbxMinMonth.SelectedIndex + 1, 1);
 
-        private DateTime GetMaxDate() => new((int)NudMaxYear.Value, CbxMaxMonth.SelectedIndex + 1, 1);
+        public DateTime GetMaxDate() => new((int)NudMaxYear.Value, CbxMaxMonth.SelectedIndex + 1, 1);
     }
 }
