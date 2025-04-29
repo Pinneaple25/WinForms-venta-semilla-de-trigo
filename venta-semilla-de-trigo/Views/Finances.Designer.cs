@@ -39,8 +39,11 @@
             BtnGraficar = new Button();
             filterDate = new venta_semilla_de_trigo.Components.FilterDate();
             PFiltro = new Panel();
+            BtnAgregar = new Button();
             CbGlobal = new CheckBox();
+            BtnLimpiar = new Button();
             GbMuestreo.SuspendLayout();
+            PFiltro.SuspendLayout();
             SuspendLayout();
             // 
             // GbMuestreo
@@ -53,9 +56,9 @@
             GbMuestreo.Controls.Add(RbSemestral);
             GbMuestreo.Controls.Add(RbAnual);
             GbMuestreo.Controls.Add(RbLustros);
-            GbMuestreo.Location = new Point(12, 159);
+            GbMuestreo.Location = new Point(12, 146);
             GbMuestreo.Name = "GbMuestreo";
-            GbMuestreo.Size = new Size(500, 125);
+            GbMuestreo.Size = new Size(688, 79);
             GbMuestreo.TabIndex = 0;
             GbMuestreo.TabStop = false;
             GbMuestreo.Text = "Intervalo de muestreo";
@@ -63,7 +66,7 @@
             // RbMensual
             // 
             RbMensual.AutoSize = true;
-            RbMensual.Location = new Point(242, 72);
+            RbMensual.Location = new Point(586, 42);
             RbMensual.Name = "RbMensual";
             RbMensual.Size = new Size(85, 24);
             RbMensual.TabIndex = 6;
@@ -73,7 +76,7 @@
             // RbBimestral
             // 
             RbBimestral.AutoSize = true;
-            RbBimestral.Location = new Point(127, 72);
+            RbBimestral.Location = new Point(488, 42);
             RbBimestral.Name = "RbBimestral";
             RbBimestral.Size = new Size(92, 24);
             RbBimestral.TabIndex = 5;
@@ -83,7 +86,7 @@
             // RbTrimestral
             // 
             RbTrimestral.AutoSize = true;
-            RbTrimestral.Location = new Point(6, 72);
+            RbTrimestral.Location = new Point(387, 42);
             RbTrimestral.Name = "RbTrimestral";
             RbTrimestral.Size = new Size(95, 24);
             RbTrimestral.TabIndex = 4;
@@ -93,7 +96,7 @@
             // RbCuatrimestral
             // 
             RbCuatrimestral.AutoSize = true;
-            RbCuatrimestral.Location = new Point(362, 42);
+            RbCuatrimestral.Location = new Point(263, 42);
             RbCuatrimestral.Name = "RbCuatrimestral";
             RbCuatrimestral.Size = new Size(118, 24);
             RbCuatrimestral.TabIndex = 3;
@@ -103,7 +106,7 @@
             // RbSemestral
             // 
             RbSemestral.AutoSize = true;
-            RbSemestral.Location = new Point(242, 42);
+            RbSemestral.Location = new Point(162, 42);
             RbSemestral.Name = "RbSemestral";
             RbSemestral.Size = new Size(95, 24);
             RbSemestral.TabIndex = 2;
@@ -113,7 +116,7 @@
             // RbAnual
             // 
             RbAnual.AutoSize = true;
-            RbAnual.Location = new Point(127, 42);
+            RbAnual.Location = new Point(88, 42);
             RbAnual.Name = "RbAnual";
             RbAnual.Size = new Size(68, 24);
             RbAnual.TabIndex = 1;
@@ -135,7 +138,7 @@
             // BtnGraficar
             // 
             BtnGraficar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BtnGraficar.Location = new Point(584, 255);
+            BtnGraficar.Location = new Point(772, 196);
             BtnGraficar.Name = "BtnGraficar";
             BtnGraficar.Size = new Size(94, 29);
             BtnGraficar.TabIndex = 1;
@@ -152,16 +155,28 @@
             // 
             // PFiltro
             // 
-            PFiltro.Location = new Point(319, 12);
+            PFiltro.Controls.Add(BtnLimpiar);
+            PFiltro.Controls.Add(BtnAgregar);
+            PFiltro.Location = new Point(545, 12);
             PFiltro.Name = "PFiltro";
-            PFiltro.Size = new Size(321, 95);
+            PFiltro.Size = new Size(321, 129);
             PFiltro.TabIndex = 3;
             PFiltro.Visible = false;
+            // 
+            // BtnAgregar
+            // 
+            BtnAgregar.Location = new Point(124, 97);
+            BtnAgregar.Name = "BtnAgregar";
+            BtnAgregar.Size = new Size(94, 29);
+            BtnAgregar.TabIndex = 0;
+            BtnAgregar.Text = "Agregar";
+            BtnAgregar.UseVisualStyleBackColor = true;
+            BtnAgregar.Click += BtnAgregar_Click;
             // 
             // CbGlobal
             // 
             CbGlobal.AutoSize = true;
-            CbGlobal.Location = new Point(357, 117);
+            CbGlobal.Location = new Point(318, 12);
             CbGlobal.Name = "CbGlobal";
             CbGlobal.Size = new Size(75, 24);
             CbGlobal.TabIndex = 4;
@@ -169,11 +184,21 @@
             CbGlobal.UseVisualStyleBackColor = true;
             CbGlobal.CheckedChanged += CbGlobal_CheckedChanged;
             // 
+            // BtnLimpiar
+            // 
+            BtnLimpiar.Location = new Point(224, 97);
+            BtnLimpiar.Name = "BtnLimpiar";
+            BtnLimpiar.Size = new Size(94, 29);
+            BtnLimpiar.TabIndex = 1;
+            BtnLimpiar.Text = "Limpiar";
+            BtnLimpiar.UseVisualStyleBackColor = true;
+            BtnLimpiar.Click += BtnLimpiar_Click;
+            // 
             // Finances
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(698, 296);
+            ClientSize = new Size(886, 237);
             Controls.Add(CbGlobal);
             Controls.Add(PFiltro);
             Controls.Add(filterDate);
@@ -185,6 +210,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             GbMuestreo.ResumeLayout(false);
             GbMuestreo.PerformLayout();
+            PFiltro.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,5 +229,7 @@
         private Components.FilterDate filterDate;
         private Panel PFiltro;
         private CheckBox CbGlobal;
+        private Button BtnAgregar;
+        private Button BtnLimpiar;
     }
 }

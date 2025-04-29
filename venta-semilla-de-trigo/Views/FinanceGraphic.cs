@@ -1,41 +1,36 @@
 ﻿using System.Windows.Forms.DataVisualization.Charting;
+using venta_semilla_de_trigo.Models;
 
 namespace venta_semilla_de_trigo.Views
 {
     public partial class FinanceGraphic: Form
     {
-        public FinanceGraphic(Dictionary<DateTime, int> data, string title = "")
+        public FinanceGraphic(List<FinanceModel> data, string title = "")
         {
             InitializeComponent();
             InitializeChart(data);
             Text = title;
         }
 
-        private void InitializeChart(Dictionary<DateTime, int> data)
+        private void InitializeChart(List<FinanceModel> data)
         {
+            data = [.. data.DistinctBy(f => f.Serie)];
             FinanceChart.Series.Clear();
-            ChartArea chartArea = new()
-            {
-                Name = "ChartArea",
-            };
-            chartArea.AxisX.Interval = 1;
-            FinanceChart.ChartAreas.Add(chartArea);
 
-            Series series = new()
+            foreach (var d in data)
             {
-                ChartType = SeriesChartType.Line,
-                IsVisibleInLegend = true,
-                BorderWidth = 3,
-            };
+                var series = new Series(d.Serie)
+                {
+                    ChartType = SeriesChartType.Line
+                };
 
-            var i = 1;
-            foreach (var item in data)
-            {
-                series.Points.AddXY(item.Key, item.Value);
-                i++;
+                foreach (var point in d.Data)
+                {
+                    series.Points.AddXY(point.Key, point.Value);
+                }
+
+                FinanceChart.Series.Add(series);
             }
-
-            FinanceChart.Series.Add(series);
         }
     }
 }

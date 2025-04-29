@@ -7,6 +7,8 @@ namespace venta_semilla_de_trigo.Views
     public partial class Finances : Form
     {
         private readonly FilterSolicitante filterSolicitante;
+        private readonly List<string> values = [];
+
         public Finances()
         {
             InitializeComponent();
@@ -18,20 +20,35 @@ namespace venta_semilla_de_trigo.Views
         {
             try
             {
-                var predicate = GetPredicate();
+                var values = GetPredicate();
                 var months = GetMonths();
                 var minDate = filterDate.GetMinDate();
                 var maxDate = filterDate.GetMaxDate();
 
-                var values = VentasContext.GetFinances(predicate, minDate, maxDate, months);
+                List<FinanceModel> data = [];
+
+                foreach (var value in values)
+                {
+                    bool predicate(Venta v) => v.Solicitante.Contains(value);
+                    var datos = VentasContext.GetFinances(predicate, minDate, maxDate, months);
+                    data.Add(new()
+                    {
+                        Serie = value,
+                        Data = datos,
+                    });
+                }
 
                 var title = GenerateTag();
-                var view = new FinanceGraphic(values, title);
+                var view = new FinanceGraphic(data, title);
                 view.Show(this);
             }
-            catch
+            catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Seleccione una fecha valida");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -43,11 +60,20 @@ namespace venta_semilla_de_trigo.Views
             PFiltro.Visible = check.Checked;
         }
 
-        private Func<Venta, bool> GetPredicate()
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            return CbGlobal.Checked
-                ? filterSolicitante.GetCondition()
-                : v => true;
+            var x = filterSolicitante.GetValue();
+            values.Add(x);
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            values.Clear();
+        }
+
+        private List<string> GetPredicate()
+        {
+            return CbGlobal.Checked ? values : [""];
         }
 
         private int GetMonths()
@@ -73,7 +99,7 @@ namespace venta_semilla_de_trigo.Views
         {
             var solicitante = filterSolicitante.GetValue();
             var fecha = filterDate.GetValue();
-            return CbGlobal.Checked 
+            return CbGlobal.Checked
                 ? $"Evolución de costos de {solicitante}, {fecha}"
                 : $"Evolución de costos {fecha}";
         }

@@ -37,8 +37,7 @@ namespace venta_semilla_de_trigo.Context
             var result = new Dictionary<DateTime, int>();
             var data = Data
                 .Where(predicate)
-                .Where(v => v.Fecha >= minDate)
-                .Where(v => v.Fecha < maxDate);
+                .Where(v => v.Fecha >= minDate && v.Fecha < maxDate);
 
             if (!data.Any()) return result;
 
